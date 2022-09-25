@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:body>
+
+    <ui:composition template = "/templates/common.xhtml">
+        <ui:define name = "header">
+            <h2>Order page</h2>
+        </ui:define>
+
+        <ui:define name = "content">
+            <f:view>
+                <h:form style="text-align: center">
+
+                    <h2> Cards you want to purchase </h2>
+
+                    <h:dataTable value="#{customerBean.getcardsChecked()}" var="card">
+
+                        <h:column>
+                            <f:facet name="header">Name</f:facet>
+                            #{card.name}
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">Type</f:facet>
+                            #{card.type}
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">set</f:facet>
+                            #{card.setName}
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">Price</f:facet>
+                            #{card.price}
+                        </h:column>
+                    </h:dataTable>
+                    <br/>
+                    <br/>
+                    <h3>For a total price of</h3>
+                    <h:outputText value="#{customerBean.price} euros" />
+
+                    <br/>
+                    <br/>
+                    <h:commandButton value = "Add more cards"  action="/html/userHome.xhtml"/>
+                    <br/>
+                    <h:commandButton value = "Check out" action="/html/checkout.xhtml"/>
+
+
+                </h:form>
+            </f:view>
+        </ui:define>
+
+        <ui:define name = "footer">
+            <h2>Belgium's largest online marketplace for buying Pokemon© card games!</h2>
+        </ui:define>
+    </ui:composition>
+
+</h:body>
+
+</html>

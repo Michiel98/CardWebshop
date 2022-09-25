@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+    <title>Webwinkel</title>
+</h:head>
+
+<h:body>
+
+    <ui:composition template = "/templates/common.xhtml">
+        <ui:define name = "header">
+            <h2>Home page</h2>
+        </ui:define>
+
+        <ui:define name = "content">
+            <f:view>
+                <h:form style="text-align: center">
+                    <div>
+                        <h:panelGrid columns="3" columnClasses="buttons" style="float:right;">
+                            <h:commandButton action = "/html/about.xhtml" value = "ABOUT" />
+                            <h:commandButton action = "/html/contact.xhtml" value = "CONTACT" />
+                            <h:commandButton action = "/html/login.xhtml" value = "LOGIN" />
+                        </h:panelGrid>
+
+                    </div>
+                    <br/>
+                    <br/>
+                    <h:graphicImage library= "images" name="logo.png" width="400" height="200"/>
+
+                    <p>“It’s more important to master the cards you’re holding than to complain about the ones your opponent was dealt.” — Grimsley</p>
+
+                </h:form>
+            </f:view>
+        </ui:define>
+
+        <ui:define name = "footer">
+            <h2>Belgium's largest online marketplace for buying Pokemon© card games!</h2>
+        </ui:define>
+    </ui:composition>
+
+</h:body>
+
+</html>
