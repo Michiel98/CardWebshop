@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<head>
+    <title>Signup</title>
+</head>
+<h:body>
+
+    <ui:composition template = "/templates/common.xhtml">
+        <ui:define name = "header">
+            <h2>Sign up Page</h2>
+        </ui:define>
+
+        <ui:define name = "content">
+            <f:view>
+                <h:form style="text-align: center">
+
+                    <h:graphicImage library= "images" name="logo.png" width="400" height="200"/>
+                    <h2>Please fill in all the information below in the corresponding text box.</h2>
+                    <br/>
+                    <br/>
+                    <h3>Firstname</h3>
+                    <h:inputText id="firstname" value="#{customerBean.firstname}"/>
+                    <h3>Lastname</h3>
+                    <h:inputText id="lastname" value="#{customerBean.lastname}"/>
+                    <h3>Email</h3>
+                    <h:inputText id="email" value="#{customerBean.username}"/>
+                    <h3>Street name and number</h3>
+                    <h:inputText id="firstLineAddress" value="#{customerBean.address1}"/>
+                    <h3>Town and zipcode</h3>
+                    <h:inputText id="secondLineAddress" value="#{customerBean.address2}"/>
+                    <h3>Password</h3>
+                    <h:inputSecret id="password" value="#{customerBean.password}"/>
+                    <br/>
+                    <br/>
+
+                    <h:commandButton value="signup" action="#{customerBean.setUser()}" />
+                    <br/>
+                    <br/>
+                    <h:outputText value ="#{customerBean.text2}"/>
+
+                </h:form>
+            </f:view>
+        </ui:define>
+
+        <ui:define name = "footer">
+            <h2>Belgium's largest online marketplace for buying Pokemon© card games!</h2>
+        </ui:define>
+    </ui:composition>
+
+</h:body>
+
+</html>

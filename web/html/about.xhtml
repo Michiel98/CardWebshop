@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core" lang="en">
+<h:head>
+    <title>About</title>
+</h:head>
+<h:body>
+
+    <ui:composition template = "/templates/common.xhtml">
+        <ui:define name = "header">
+            <h2>About page</h2>
+        </ui:define>
+
+        <ui:define name = "content">
+            <f:view>
+                <h:form style="text-align: center">
+
+                    <h:graphicImage library= "images" name="pik.png" width="120" height="120" style="margin-left: 0px"/>
+
+                    <h:outputLabel><strong> <font size="+2">FAQ's</font></strong></h:outputLabel>
+                    <br /><br />
+                    <h:outputLabel><strong> <font size="+1">How does the free delivery work?</font></strong></h:outputLabel>
+                    <br /><br />
+                    <h:outputLabel>Your package will be delivered the next day after we recieve the payment for free. We deliver between 8:00 and 22:00.</h:outputLabel>
+                    <br /><br />
+                    <h:outputLabel><strong> <font size="+1">How can I know when delivery will take place?</font></strong></h:outputLabel>
+                    <br /><br />
+                    <h:outputLabel>The morning of your delivery day, you'll receive an email with a time slot for your delivery.</h:outputLabel>
+                    <br /><br />
+                    <h:outputLabel><strong> <font size="+1">What is the store's bank account number?</font></strong></h:outputLabel>
+                    <br /><br />
+                    <h:outputLabel>You can transfer the money to our account number, BE07310167625585. Always state your name and confirmation number when you make a payment.</h:outputLabel>
+                    <br /><br />
+                    <br /><br />
+
+                    <h:commandButton value="BACK" action="#{customerBean.getNextPage()}" />
+
+
+                </h:form>
+            </f:view>
+        </ui:define>
+
+        <ui:define name = "footer">
+            <h2>Belgium's largest online marketplace for buying Pokemon© card games!</h2>
+        </ui:define>
+    </ui:composition>
+
+</h:body>
+
+</html>
